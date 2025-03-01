@@ -13,6 +13,14 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
+    - name: Set up environment variables
+      run: |
+      echo "DB_HOST=${{ secrets.DB_HOST }}" >> .env
+      echo "DB_PORT=${{ secrets.DB_PORT }}" >> .env
+      echo "DB_DATABASE=${{ secrets.DB_DATABASE }}" >> .env
+      echo "DB_USERNAME=${{ secrets.DB_USERNAME }}" >> .env
+      echo "DB_PASSWORD=${{ secrets.DB_PASSWORD }}" >> .env
+
     - name: Deploy to DigitalOcean
       uses: appleboy/ssh-action@v0.1.5
       with:
