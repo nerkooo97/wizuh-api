@@ -50,7 +50,7 @@ Route::prefix('buslines')->group(function () {
 Route::apiResource('products', ProductController::class);
 
 // Product Categories routes
-Route::apiResource('categories', ProductCategoryController::class);
+Route::apiResource('product-categories', ProductCategoryController::class);
 
 // City routes
 Route::get('general/cities', [CityController::class, 'index']);
